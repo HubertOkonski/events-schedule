@@ -135,6 +135,9 @@
   .black {
     display: none;
   }
+  .event .event-type-container svg {
+    max-width: 300px;
+  }
   .button-container {
     margin: 1.5rem 0;
   }
