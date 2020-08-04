@@ -13,9 +13,16 @@ function App() {
     return a - b;
   };
   const imageEventTypeRender = (type) => {
-    if (type === "investorsday") return <Investorday />;
-    else if (type === "webinar") return <Webinar />;
-    else if (type === "meetup") return <Meetup />;
+    switch (type) {
+      case "investorsday":
+        return <Investorday />;
+      case "webinar":
+        return <Webinar />;
+      case "meetup":
+        return <Meetup />;
+      default:
+        break;
+    }
   };
   const dayNameGetter = (dayNumber) => {
     let dayNames = [
@@ -47,7 +54,6 @@ function App() {
   };
   useEffect(() => {
     const succesCallback = (data) => {
-      console.log(data);
       data = data.sort(sortArrayByDate);
       setEventArray(data);
     };
