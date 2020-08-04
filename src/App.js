@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ReactComponent as Calendar } from "./images/calendar.svg";
+import Calendar from "./images/calendar.svg";
 import { ReactComponent as Meetup } from "./images/icons/meetup.svg";
 import { ReactComponent as Webinar } from "./images/icons/webinar.svg";
 import { ReactComponent as Investorday } from "./images/icons/investorsday.svg";
@@ -50,7 +50,7 @@ function App() {
     )}/${date.getFullYear()} ${dayNameGetter(
       date.getDay()
     )} ${date.getHours()}:${date.getMinutes()}`;
-    return <div>{stringDate}</div>;
+    return stringDate;
   };
   useEffect(() => {
     const succesCallback = (data) => {
@@ -79,8 +79,10 @@ function App() {
           <div className={`event ${classSetter(index)}`} key={index}>
             <div className="date-container event-part">
               <div className="date-text">
-                <Calendar className="calendar-svg" />
-                {dateGenerator(event.datetime)}
+                <div>
+                  <img src={Calendar} alt="" srcset="" />
+                  {dateGenerator(event.datetime)}
+                </div>
               </div>
               <div className="event-type-container">
                 {imageEventTypeRender(event.type)}

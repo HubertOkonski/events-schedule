@@ -44,7 +44,9 @@
     display: flex;
     justify-content: center;
     position: relative;
-    padding: 0 2.5rem;
+    div {
+      text-align: center;
+    }
   }
   .date-container {
     padding: 1rem;
@@ -53,11 +55,9 @@
     font-size: 1.5rem;
     font-weight: 600;
     width: 30%;
-    .calendar-svg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      transform: translate(-42.5%, calc(-50% + 20px));
+    img {
+      margin: 0 0.75rem;
+      width: 25px;
     }
   }
   .title-container {
@@ -125,6 +125,13 @@
     max-width: 1390px;
   }
 }
+
+@media (max-width: 1399px) {
+  html {
+    font-size: 92.5%;
+  }
+}
+
 @media (max-width: 1024px) {
   .event {
     flex-direction: column;
@@ -146,11 +153,6 @@
     .button-container {
       display: flex;
       justify-content: center;
-    }
-  }
-  .date-text {
-    div {
-      text-align: center;
     }
   }
 }
