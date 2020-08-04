@@ -44,7 +44,7 @@ function App() {
     else return "";
   };
   const dateGenerator = (timeInString) => {
-    let date = new Date(timeInString);
+    let date = new Date(timeInString.replace(/-/g, "/"));
     let stringDate = `${zeroAdder(date.getDate())}/${zeroAdder(
       date.getMonth() + 1
     )}/${date.getFullYear()} ${dayNameGetter(
